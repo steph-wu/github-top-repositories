@@ -1,15 +1,14 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
+import App from './App'
+import { renderWithProviders } from './utils/testUtils'
+import { screen } from '@testing-library/react';
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+describe('App', () => {
+  it('renders leaderboard by default', () => {
+    renderWithProviders(<App />);
+  
+    const title = screen.getByText(/leaderboard/i)
 
-  expect(getByText(/learn/i)).toBeInTheDocument();
-});
+    expect(title).toBeInTheDocument();
+  });
+})
+
