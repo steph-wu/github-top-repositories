@@ -52,7 +52,7 @@ const Navigation = styled.nav`
 
 const ContentWrapper = styled.section`
   width: 700px;
-  max-width: 65vh;
+  max-width: 65%;
 `
 
 export default RepositoriesScreen

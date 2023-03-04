@@ -25,9 +25,7 @@ export const fetchRepositories = createAsyncThunk(
         currentPage: req.page ?? 1
       }
     } catch (error: any) {
-      return thunkApi.rejectWithValue(
-        JSON.stringify(error?.response?.data?.status?.message),
-      )
+      return thunkApi.rejectWithValue(error?.response?.data?.message)
     }
   },
 )

@@ -54,9 +54,9 @@ const ColumnTitleWrapper = styled.div`
 `
 
 const ListWrapper = styled.div`
-  height: 420px;
-  max-height: 80vh;
-  overflow-y: scroll;
+  height: 800px;
+  max-height: 60%;
+  overflow: auto;
   padding: 16px;
   margin: 16px 0;
 `
