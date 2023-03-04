@@ -53,7 +53,7 @@ export const mockFavRepositoryItem: IRepository = {
 }
 
 export const mockRepositoriesState: IRepositoryStore = {
-  topRepositories: {
+  repositories: {
     entities: [
       mockRepositoryItem,
       mockFavRepositoryItem,

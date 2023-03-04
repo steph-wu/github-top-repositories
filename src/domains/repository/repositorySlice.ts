@@ -3,7 +3,7 @@ import { fetchRepositories } from "./repositoryThunks";
 import { IRepository } from './repositoryTypes';
 
 export interface IRepositoryStore {
-  topRepositories: {
+  repositories: {
     entities: IRepository[]
     currentPage: number
     error: boolean
@@ -15,7 +15,7 @@ export interface IRepositoryStore {
 }
 
 const initialState: IRepositoryStore = {
-  topRepositories: {
+  repositories: {
     entities: [],
     currentPage: 0,
     error: false
@@ -61,13 +61,13 @@ export const repositoriesSlice = createSlice({
     builder
       .addCase(fetchRepositories.fulfilled, (state, action) => {
         if (action.payload?.items && action.payload?.currentPage) {
-          state.topRepositories.entities = [...action.payload.items]
-          state.topRepositories.currentPage = action.payload.currentPage
-          state.topRepositories.error = false
+          state.repositories.entities = [...action.payload.items]
+          state.repositories.currentPage = action.payload.currentPage
+          state.repositories.error = false
         }
       })
       .addCase(fetchRepositories.rejected, (state, action) => {
-        state.topRepositories.error = true
+        state.repositories.error = true
     });
   },
 });

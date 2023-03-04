@@ -6,12 +6,12 @@ export const repositoriesSelector = (state: any): any =>
 
 export const getRepositories = createSelector(
   repositoriesSelector,
-  (store: IRepositoryStore) => store.topRepositories.entities,
+  (store: IRepositoryStore) => store.repositories.entities,
 )
 
 export const getCurrentPage = createSelector(
   repositoriesSelector,
-  (store: IRepositoryStore) => store.topRepositories.currentPage,
+  (store: IRepositoryStore) => store.repositories.currentPage,
 )
 
 export const getFavouriteRepos = createSelector(
